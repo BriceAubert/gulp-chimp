@@ -7,6 +7,7 @@ const PLUGIN_NAME = 'gulp-chimp';
 const chimpPath = path.resolve(process.cwd() + '/node_modules/.bin/chimp');
 var optionModule = true;
 var chimpDefaultConfig = require('./chimp.conf.js');
+var callbackTimeout = 5000;
 
 function someBodyShouldDoSomething(options) {
     if (options === undefined) {
@@ -38,21 +39,24 @@ function createOutputFolder(pathOutput) {
     }
 }
 
-function initChimpGlobal(options) {
-    var chimp = exec(chimpPath + ' ' + options);
+function initChimpGlobal(options, cb) {
+    var timeout,
+        chimp = exec(chimpPath + ' ' + options);
     chimp.stdout.on('data', function (data) {
+        clearTimeout(timeout);
         process.stdout.write(data);
+        timeout = setTimeout(cb, this.callbackTimeout);
     });
 }
 
-function initChimpModule(options) {
+function initChimpModule(options, cb) {
     var Chimp = require('chimp');
     var chimp = new Chimp(options);
     chimp.run(function () {
     });
 }
 
-module.exports = function (options) {
+module.exports = function (options, callback) {
     var optionsChimp;
     async.series([
         function (cb) {
@@ -65,9 +69,9 @@ module.exports = function (options) {
         },
         function (cb) {
             if (optionModule) {
-                initChimpGlobal(optionsChimp);
+                initChimpGlobal(optionsChimp, callback);
             }else{
-                initChimpModule(optionsChimp);
+                initChimpModule(optionsChimp, callback);
             }
             cb();
         }
