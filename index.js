@@ -45,7 +45,7 @@ function initChimpGlobal(options, cb) {
     chimp.stdout.on('data', function (data) {
         clearTimeout(timeout);
         process.stdout.write(data);
-        timeout = setTimeout(cb, this.callbackTimeout);
+        timeout = setTimeout(cb, callbackTimeout);
     });
 }
 

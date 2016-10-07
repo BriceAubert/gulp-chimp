@@ -1,5 +1,8 @@
 # gulp-chimp
 
+MOSTLY & MAINLY BASED ON [gulp-chimp](https://github.com/eduardogch/gulp-chimp/) BY *[Eduardo Gonzalez](https://github.com/eduardogch)*.
+
+
 [Chimp.js](https://github.com/xolvio/chimp/) makes it super easy for developers to write automated tests (Selenium, WebDriverIO, Saucelabs, Mocha, Cucumber, etc. etc.)
 
 [gulp-chimp](https://github.com/eduardogch/gulp-chimp/) to interact with the Chimp.js

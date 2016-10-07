@@ -1,18 +1,19 @@
 {
   "name": "gulp-chimp",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Gulp plugin to interact with the Chimp.js",
   "license": "MIT",
   "main": "index.js",
   "author": "Eduardo Gonzalez <eduardo.gch@gmail.com>",
+  "author": "Brice AUBERT <briceaubert@yopmail.com>",
   "url": "https://www.npmjs.com/package/gulp-chimp",
-  "homepage": "https://github.com/eduardogch/gulp-chimp#readme",
+  "homepage": "https://github.com/BriceAubert/gulp-chimp#readme",
   "bugs": {
-    "url": "https://github.com/eduardogch/gulp-chimp/issues"
+    "url": "https://github.com/BriceAubert/gulp-chimp/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eduardogch/gulp-chimp.git"
+    "url": "git+https://github.com/BriceAubert/gulp-chimp.git"
   },
   "scripts": {
     "start": "node_modules/.bin/gulp start",
